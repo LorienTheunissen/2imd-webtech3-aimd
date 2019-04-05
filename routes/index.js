@@ -13,4 +13,7 @@ router.post('api/v1/messages', messageController.postMessage);
 // GET messages
 router.get('/api/v1/messages', messageController.getMessages);
 
+// GET message by id
+router.get('/api/v1/messages/:id', messageController.getMessageId);
+
 module.exports = router;
