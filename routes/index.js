@@ -10,4 +10,7 @@ router.get('/', function(req, res, next) {
 // POST message 
 router.post('api/v1/messages', messageController.postMessage);
 
+// GET messages
+router.get('/api/v1/messages', messageController.getMessages);
+
 module.exports = router;

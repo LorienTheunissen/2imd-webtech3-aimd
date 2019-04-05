@@ -5,4 +5,12 @@ let postMessage = (req, res) => {
     });
 }
 
+let getMessages = (req, res) => {
+    res.json({
+        "status": "success",
+        "message": "GETTING messages"
+    });
+}
+
 module.exports.postMessage = postMessage;
+module.exports.getMessages = getMessages;
