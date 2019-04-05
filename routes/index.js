@@ -19,4 +19,7 @@ router.get('/api/v1/messages/:id', messageController.getMessage);
 // DELETE message
 router.delete('/api/v1/messages/:id', messageController.deleteMessage);
 
+// PUT (update) message
+router.put('/api/v1/messages/:id', messageController.putMessage);
+
 module.exports = router;

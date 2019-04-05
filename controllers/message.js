@@ -32,7 +32,18 @@ let deleteMessage = (req, res) => {
     });
 }
 
+let putMessage = (req, res) => {
+
+    var id = req.params.id;
+
+    res.json({
+        "status": "success",
+        "message": `UPDATING a message with ID: ${id}`
+    });
+}
+
 module.exports.postMessage = postMessage;
 module.exports.getMessages = getMessages;
 module.exports.getMessage = getMessage;
 module.exports.deleteMessage = deleteMessage;
+module.exports.putMessage = putMessage;
