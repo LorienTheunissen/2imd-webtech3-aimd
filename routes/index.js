@@ -13,7 +13,10 @@ router.post('api/v1/messages', messageController.postMessage);
 // GET messages
 router.get('/api/v1/messages', messageController.getMessages);
 
-// GET message by id
-router.get('/api/v1/messages/:id', messageController.getMessageId);
+// GET message
+router.get('/api/v1/messages/:id', messageController.getMessage);
+
+// DELETE message
+router.delete('/api/v1/messages/:id', messageController.deleteMessage);
 
 module.exports = router;

@@ -12,7 +12,7 @@ let getMessages = (req, res) => {
     });
 }
 
-let getMessageId = (req, res) => {
+let getMessage = (req, res) => {
 
     var id = req.params.id;
 
@@ -22,6 +22,17 @@ let getMessageId = (req, res) => {
     });
 };
 
+let deleteMessage = (req, res) => {
+
+    var id = req.params.id;
+
+    res.json({
+        "status": "success",
+        "message": `DELETING a message with ID: ${id}`
+    });
+}
+
 module.exports.postMessage = postMessage;
 module.exports.getMessages = getMessages;
-module.exports.getMessageId = getMessageId;
+module.exports.getMessage = getMessage;
+module.exports.deleteMessage = deleteMessage;
