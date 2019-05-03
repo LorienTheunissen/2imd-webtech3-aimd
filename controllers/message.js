@@ -1,7 +1,7 @@
-let postMessage = (req, res) => {
+let postMessages = (req, res) => {
     res.json({
         "status": "success",
-        "message": "POSTING a new message"
+        "message": "POSTING new messages"
     });
 }
 
@@ -42,7 +42,7 @@ let putMessage = (req, res) => {
     });
 }
 
-module.exports.postMessage = postMessage;
+module.exports.postMessages = postMessages;
 module.exports.getMessages = getMessages;
 module.exports.getMessage = getMessage;
 module.exports.deleteMessage = deleteMessage;

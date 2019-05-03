@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 // POST message 
-router.post('api/v1/messages', messageController.postMessage);
+router.post('api/v1/messages', messageController.postMessages);
 
 // GET messages
 router.get('/api/v1/messages', messageController.getMessages);
