@@ -1,5 +1,39 @@
 extends layout
 
+block logo
+  img.logo(src="/images/logo.png", alt="logo")
+  
 block content
-  h1= title
-  p Welcome to #{title}
+  .content
+    .chatbox
+      .questionbox.questionbox--user 
+        img.questionbox__img(src="#", alt="user")
+        p.questionbox__username Jhon Doe
+        p.questionbox__question @bot wat is het weer morgen?
+      .questionbox.questionbox--awnser
+        img.questionbox__img(src="/images/img__bot.png", alt="bot")
+        p.questionbox__username AI bot
+        p.questionbox__question we zien wel.
+    .userbox
+      h1 Users
+      .users
+      .user 
+        img.user__img(src="#", alt="user")
+        p.user__username Jhon Doe
+      .user 
+        img.user__img(src="#", alt="user")
+        p.user__username SniperCool
+      .user 
+        img.user__img(src="#", alt="user")
+        p.user__username LorienT
+      h1 Ai Assistant 
+      .user
+        img.user__img(src="/images/img__bot.png", alt="user")
+        p.user__username Chatbot
+block chat
+  form.chat(action="", method="post")
+    .chat__div
+      input.chat--input(type="text", name="question",placeholder="Ask a question (@bot to ask ai)")
+    .chat__div
+      input.chat--submit(type="submit", value="Verzend")
+      
