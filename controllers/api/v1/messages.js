@@ -1,14 +1,14 @@
-let postMessages = (req, res) => {
-    res.json({
-        "status": "success",
-        "message": "POSTING new messages"
-    });
-}
-
 let getMessages = (req, res) => {
     res.json({
         "status": "success",
         "message": "GETTING messages"
+    });
+}
+
+let postMessages = (req, res) => {
+    res.json({
+        "status": "success",
+        "message": "POSTING new messages"
     });
 }
 
