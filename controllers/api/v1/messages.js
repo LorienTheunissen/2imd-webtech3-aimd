@@ -1,15 +1,41 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const messageSchema = new Schema({
+    text: String,
+    user: String
+})
+
+const Message = mongoose.model('Message', messageSchema);
+
 let getMessages = (req, res) => {
-    res.json({
-        "status": "success",
-        "message": "GETTING messages"
-    });
+    Message.find({
+        "user":"Lorien"
+    },(err, docs) => {
+        if(!err){
+            res.json({
+                "status": "success",
+                "data" : {
+                    "messages": docs
+                }
+            });
+        }
+    })
 }
 
 let postMessages = (req, res) => {
-    res.json({
-        "status": "success",
-        "message": "POSTING new messages"
-    });
+    let message = new Message();
+    message.text = "This is a message";
+    message.user = "Lorien";
+    message.save((err, doc) => {
+        if(!err){
+            res.json({
+                "status": "success",
+                "data" : {
+                    "message": doc
+                }
+            });
+        }
+    })
 }
 
 let getMessage = (req, res) => {
@@ -18,7 +44,9 @@ let getMessage = (req, res) => {
 
     res.json({
         "status": "success",
-        "message": `GETTING message with ID: ${id}`
+        "data": {
+            "message": `GETTING message with ID: ${id}`
+        } 
     });
 };
 
@@ -28,7 +56,9 @@ let deleteMessage = (req, res) => {
 
     res.json({
         "status": "success",
-        "message": `DELETING a message with ID: ${id}`
+        "data": {
+            "message": `deleting message with ID: ${id}`
+        } 
     });
 }
 
@@ -38,7 +68,9 @@ let putMessage = (req, res) => {
 
     res.json({
         "status": "success",
-        "message": `UPDATING a message with ID: ${id}`
+        "data": {
+            "message": `updating message with ID: ${id}`
+        } 
     });
 }
 
