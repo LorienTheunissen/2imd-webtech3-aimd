@@ -1,11 +1,4 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const messageSchema = new Schema({
-    text: String,
-    user: String
-})
-
-const Message = mongoose.model('Message', messageSchema);
+const Message = require('../../../models/Message');
 
 let getMessages = (req, res) => {
     Message.find({
@@ -22,11 +15,19 @@ let getMessages = (req, res) => {
     })
 }
 
-let postMessages = (req, res) => {
+let postMessages = (req, res, next) => {
+    console.log(req.body);
+
     let message = new Message();
-    message.text = "This is a message";
-    message.user = "Lorien";
+    message.text = req.body.text;
+    message.user = req.body.user;
     message.save((err, doc) => {
+        if(err){
+            res.json({
+                "status": "error",
+                "message": "Could not save this message"
+            });
+        }
         if(!err){
             res.json({
                 "status": "success",
