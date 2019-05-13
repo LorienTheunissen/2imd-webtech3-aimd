@@ -9,6 +9,7 @@ const usersRouter = require('./routes/users');
 const apiMessagesRouter = require ('./routes/api/v1/messages');
 
 const mongoose = require('mongoose');
+mongoose.set('useCreateIndex', true);
 mongoose.connect('mongodb://localhost:27017/aimd', {useNewUrlParser: true});
 
 const app = express();
