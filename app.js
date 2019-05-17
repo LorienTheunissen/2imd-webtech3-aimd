@@ -7,9 +7,11 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const apiMessagesRouter = require ('./routes/api/v1/messages');
 const passport = require('./passport/passport');
+const cors = require('cors');
 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/aimd', {useNewUrlParser: true});
+mongoose.set('useCreateIndex', true);
 
 const app = express();
 
