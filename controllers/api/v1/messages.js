@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const Message = require('../../../models/Message');
 
 let getMessages = (req, res) => {
@@ -37,6 +38,20 @@ let postMessages = (req, res, next) => {
             });
         }
     })
+=======
+let postMessages = (req, res) => {
+    res.json({
+        "status": "success",
+        "message": "POSTING new messages"
+    });
+}
+
+let getMessages = (req, res) => {
+    res.json({
+        "status": "success",
+        "message": "GETTING messages"
+    });
+>>>>>>> sass
 }
 
 let getMessage = (req, res) => {
@@ -45,9 +60,13 @@ let getMessage = (req, res) => {
 
     res.json({
         "status": "success",
+<<<<<<< HEAD
         "data": {
             "message": `GETTING message with ID: ${id}`
         } 
+=======
+        "message": `GETTING message with ID: ${id}`
+>>>>>>> sass
     });
 };
 
@@ -57,9 +76,13 @@ let deleteMessage = (req, res) => {
 
     res.json({
         "status": "success",
+<<<<<<< HEAD
         "data": {
             "message": `deleting message with ID: ${id}`
         } 
+=======
+        "message": `DELETING a message with ID: ${id}`
+>>>>>>> sass
     });
 }
 
@@ -69,9 +92,13 @@ let putMessage = (req, res) => {
 
     res.json({
         "status": "success",
+<<<<<<< HEAD
         "data": {
             "message": `updating message with ID: ${id}`
         } 
+=======
+        "message": `UPDATING a message with ID: ${id}`
+>>>>>>> sass
     });
 }
 
