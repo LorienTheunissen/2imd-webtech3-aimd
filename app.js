@@ -3,21 +3,12 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-<<<<<<< HEAD
-const cors = require('cors');
-=======
-
->>>>>>> sass
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const apiMessagesRouter = require ('./routes/api/v1/messages');
 const passport = require('./passport/passport');
 
 const mongoose = require('mongoose');
-<<<<<<< HEAD
-mongoose.set('useCreateIndex', true);
-=======
->>>>>>> sass
 mongoose.connect('mongodb://localhost:27017/aimd', {useNewUrlParser: true});
 
 const app = express();
