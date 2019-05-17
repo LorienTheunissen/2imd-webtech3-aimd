@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var messageController = require('../controllers/message');
+var messageController = require('../controllers/api/v1/messages');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -8,18 +8,18 @@ router.get('/', function(req, res, next) {
 });
 
 // POST message
-router.post('/api/v1/messages', messageController.postMessages);
+router.post('', messageController.postMessages);
 
 // GET messages
-router.get('/api/v1/messages', messageController.getMessages);
+router.get('', messageController.getMessages);
 
 // GET message
-router.get('/api/v1/messages/:id', messageController.getMessage);
+router.get('/:id', messageController.getMessage);
 
 // DELETE message
-router.delete('/api/v1/messages/:id', messageController.deleteMessage);
+router.delete('/:id', messageController.deleteMessage);
 
 // PUT (update) message
-router.put('/api/v1/messages/:id', messageController.putMessage);
+router.put('/:id', messageController.putMessage);
 
 module.exports = router;
