@@ -7,6 +7,14 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'AIMD' });
 });
 
+router.get('/signup', function(req, res, next) {
+  res.render('signup');
+});
+
+router.get('/login', function(req, res, next) {
+  res.render('login');
+});
+
 // POST message
 router.post('', messageController.postMessages);
 
