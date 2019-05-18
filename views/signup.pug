@@ -3,13 +3,14 @@ extends layout
 block content
   .main.container
         h1 Sign up
-        form(method='POST' action='/login')
+        div.alert
+        form(method='POST' action='')
           div.form-group
-            label(for='email') Email
-            input(type='text' id='email' placeholder='email' name='email')
+            label(for='username') Username
+            input(type='text' id='register_username' name='username')
           div.form-group
             label(for='password') Password
-            input(type='password' id='password' placeholder='password' name='password')
-          button(type='submit') Sign up
+            input(type='password' id='register_password' name='password')
+          button(type='submit' id="register_button") Sign up
         p Already logged in before? Log in 
           a(href='login') here!

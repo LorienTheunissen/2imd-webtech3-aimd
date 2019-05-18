@@ -5,11 +5,11 @@ block content
         h1 Log In
         form(method='POST' action='/login')
           div.form-group
-            label(for='email') Email
-            input(type='text' id='email' placeholder='email' name='email')
+            label(for='username') Username
+            input(type='text' id='login_username' name='username')
           div.form-group
             label(for='password') Password
-            input(type='password' id='password' placeholder='password' name='password')
-          button(type='submit') Log in
+            input(type='password' id='login_password' name='password')
+          button(type='submit' id="login_button") Log in
         p No registered user yet? Sign up 
           a(href='signup') here
