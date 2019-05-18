@@ -3,6 +3,7 @@ extends layout
 block content
   .main.container
         h1 Log In
+        div.alert
         form(method='POST' action='/login')
           div.form-group
             label(for='username') Username
