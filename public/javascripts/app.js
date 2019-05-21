@@ -1,8 +1,8 @@
-var btnSignup = document.querySelector("#register_button").addEventListener("click", function(){
+document.querySelector("#register_button").addEventListener("click", (e) => {
     let username = document.querySelector("#register_username").value;
     let password = document.querySelector("#register_password").value;
 
-    fetch('http://localhost:3000/signup', {
+    fetch('/signup', {
         method: "post",
         headers: {
             'Content-Type': 'application/json'
@@ -15,8 +15,12 @@ var btnSignup = document.querySelector("#register_button").addEventListener("cli
         return response.json();
     }).then(json => {
         if(json.status === "success"){
+            let token = json.data.token;
+            localStorage.setItem("token", token);
+            window.location.href = "/";
+        } else {
             let feedback = document.querySelector('.alert');
-            feedback.textContent = "Sign up comlete!";
+            feedback.textContent = "Sign up failed!";
             feedback.classList.remove('hidden');
         }
     })
