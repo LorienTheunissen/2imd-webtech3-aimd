@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  .main.container
+    .container
         h1 Sign up
         div.alert
         form(method='POST' action='')
@@ -12,5 +12,5 @@ block content
             label(for='password') Password
             input(type='password' id='register_password' name='password')
           button(type='submit' id="register_button") Sign up
-        p Already logged in before? Log in 
-          a(href='login') here!
+        p Already logged in before?  
+          a(href='login') Log in here!

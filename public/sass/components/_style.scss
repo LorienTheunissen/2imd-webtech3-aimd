@@ -107,6 +107,12 @@ body {
     right: 0;
     z-index: -99;
   }
+
+  //Sign up
+  .main{
+
+  }
+
   @media screen and (max-width: 450px){
   body{
     height:200vh;
@@ -159,4 +165,10 @@ body {
     background-color: tomato;
     display: hidden;
   }
+  //Sign up
+  .container{
+    width: 80%;
+    margin: auto;
+  }
+
   }
