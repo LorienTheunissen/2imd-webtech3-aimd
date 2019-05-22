@@ -1,4 +1,4 @@
-const{ src, dest, watch, series } = require('gulp');
+const{ src, dest, watch, parallel } = require('gulp');
 const sass = require('gulp-sass');
 const nodemon = require('gulp-nodemon');
 const size = require('gulp-size');
@@ -16,7 +16,7 @@ function sass2css(done) {
 function startnodemon(done) {
     var started = false;
     return nodemon({
-        script: 'app.js'
+        script: './bin/www'
     }).on('start', function() {
         if (!started) {
             done();
@@ -41,4 +41,4 @@ function sizing(done) {
 watch('./public/sass/**/*.scss', sass2css);
 
 
-module.exports.default = series(startnodemon, sass2css, sizing);
+module.exports.default = parallel(startnodemon, sass2css, sizing);
