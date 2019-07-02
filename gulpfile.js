@@ -4,6 +4,7 @@ const nodemon = require('gulp-nodemon');
 const size = require('gulp-size');
 const notify = require('gulp-notify');
 
+// Automatisch je Sass bestanden omzetten naar CSS
 function sass2css(done) {
     src("./public/sass/app.scss")
         .pipe(sass({
@@ -13,6 +14,8 @@ function sass2css(done) {
 
     done();
 }
+
+// Nodemon: automatisch laden van een webpagina zonder server te heropstarten
 function startnodemon(done) {
     var started = false;
     return nodemon({
@@ -25,6 +28,8 @@ function startnodemon(done) {
     })
     
 }
+
+// Afbeeldingen comprimeren zodat ze sneller geladen worden in je browser
 function sizing(done) {
     const kb = size();
     src("./app.js")
@@ -39,6 +44,5 @@ function sizing(done) {
 }
 
 watch('./public/sass/**/*.scss', sass2css);
-
 
 module.exports.default = parallel(startnodemon, sass2css, sizing);
